@@ -1,0 +1,22 @@
+{
+  "scope": "Synthetic replay only; no real-world accuracy claim",
+  "total_alerts": 65,
+  "classes": {
+    "unknown_anomaly": 54,
+    "scan": 1,
+    "ddos": 3,
+    "dns_anomaly": 1,
+    "beaconing": 6
+  },
+  "shap_explanations": 65,
+  "all_additivity_verified": true,
+  "max_reconstruction_error": 2.220446049250313e-16,
+  "model_behavioral_disagreements": 54,
+  "limitations": [
+    "KitNET can flag ordinary synthetic service traffic outside its separate training baseline.",
+    "Disagreement is shown explicitly; RF SHAP does not explain the KitNET reconstruction error or heuristic rule.",
+    "The current UI retains only the latest 100 detections; archived alerts remain in the configured database."
+  ],
+  "alerts_from_designated_benign_demo_sources": 0,
+  "benign_source_scope": "Based on the synthetic generator roles, not inferred real-world ground truth"
+}

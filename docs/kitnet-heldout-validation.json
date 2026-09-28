@@ -1,0 +1,7 @@
+{
+  "scope": "Independent synthetic benign packet windows; not live traffic accuracy",
+  "seed": 9881,
+  "windows": 1200,
+  "threshold": 0.22933629515143583,
+  "flagged_windows": 0
+}

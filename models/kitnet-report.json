@@ -1,0 +1,9 @@
+{
+  "baseline": "independent synthetic benign packet-window baseline",
+  "threshold": 0.2293362951514358,
+  "training_rows": 601,
+  "calibration_rows": 1999,
+  "baseline_seed": 173,
+  "attack_rows_in_baseline": 0,
+  "upstream_commit": "02eb5e804568ee9f3968d4fc5bdfd37a9c0bc190"
+}

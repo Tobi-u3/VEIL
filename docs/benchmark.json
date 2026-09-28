@@ -1,0 +1,25 @@
+{
+  "scope": "Synthetic JSON metadata ingestion, feature extraction, RF, KitNET, SHAP on alerts, ADWIN, NetworkX and SQLite persistence; NOT Zeek packet capture throughput",
+  "events": 63940,
+  "elapsed_seconds": 6.006,
+  "events_per_second": 10645,
+  "target_events_per_second": 1000,
+  "target_met": true,
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "metrics": {
+    "packets": 63540,
+    "captured_bytes": 11813800,
+    "retained_packets": 10000,
+    "events": 63940,
+    "windows": 860,
+    "alerts": 100,
+    "processing_p95_ms": 6.2,
+    "state_drops": 0,
+    "late_events": 0,
+    "parse_errors": 0,
+    "drift_events": 0,
+    "uptime_seconds": 6
+  },
+  "latency_definition": "processing_p95_ms covers a completed feature window and persistence; excludes 2s accumulation, log lag and UI delay"
+}

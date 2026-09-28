@@ -1,0 +1,15 @@
+{
+  "zeek_version": "9.0.0",
+  "pcap_packets": 3197,
+  "metadata_records": 3217,
+  "multiple_source_prefixes": true,
+  "detected_classes": [
+    "beaconing",
+    "ddos",
+    "dns_anomaly",
+    "scan",
+    "unknown_anomaly"
+  ],
+  "graph_alert_ids_match": true,
+  "scope": "Offline PCAP ingestion and inference. Live mirroring unverified."
+}

@@ -1,0 +1,36 @@
+/root/.local/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_api_websocket_and_origin (test_api.APITests.test_api_websocket_and_origin) ... ok
+test_bad_timestamp (test_pipeline.PipelineTests.test_bad_timestamp) ... ok
+test_capacity (test_pipeline.PipelineTests.test_capacity) ... ok
+test_demo_detections_and_no_fabricated_ratios (test_pipeline.PipelineTests.test_demo_detections_and_no_fabricated_ratios) ... ok
+test_distributed_rate (test_pipeline.PipelineTests.test_distributed_rate) ... ok
+test_entropy (test_pipeline.PipelineTests.test_entropy) ... ok
+test_ja4_observed_only (test_pipeline.PipelineTests.test_ja4_observed_only) ... ok
+test_normal_no_rule_alert (test_pipeline.PipelineTests.test_normal_no_rule_alert) ... ok
+test_packet_sequence_not_beacon (test_pipeline.PipelineTests.test_packet_sequence_not_beacon) ... ok
+test_store (test_pipeline.PipelineTests.test_store) ... ok
+test_tail_partial_rotation_and_invalid (test_pipeline.PipelineTests.test_tail_partial_rotation_and_invalid) ... ok
+test_window_and_reverse_missing (test_pipeline.PipelineTests.test_window_and_reverse_missing) ... ok
+test_aggregate_alert_links_actual_sources (test_traffic.TrafficTests.test_aggregate_alert_links_actual_sources) ... ok
+test_buffer_and_cursor_no_duplicates (test_traffic.TrafficTests.test_buffer_and_cursor_no_duplicates) ... ok
+test_every_packet_not_protocol_events (test_traffic.TrafficTests.test_every_packet_not_protocol_events) ... ok
+test_external_and_ipv6_not_filtered (test_traffic.TrafficTests.test_external_and_ipv6_not_filtered) ... ok
+test_warning_persists_after_normal_and_expiry (test_traffic.TrafficTests.test_warning_persists_after_normal_and_expiry) ... ok
+test_websocket_views_bounded (test_traffic.TrafficTests.test_websocket_views_bounded) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 2.311s
+
+OK
+Feature-Mapper: train-mode, Anomaly-Detector: off-mode
+Feature-Mapper: train-mode, Anomaly-Detector: off-mode
+Feature-Mapper: train-mode, Anomaly-Detector: off-mode
+Feature-Mapper: train-mode, Anomaly-Detector: off-mode
+Feature-Mapper: train-mode, Anomaly-Detector: off-mode
+Feature-Mapper: train-mode, Anomaly-Detector: off-mode
+Feature-Mapper: train-mode, Anomaly-Detector: off-mode
+Feature-Mapper: train-mode, Anomaly-Detector: off-mode
+Feature-Mapper: train-mode, Anomaly-Detector: off-mode
+Feature-Mapper: train-mode, Anomaly-Detector: off-mode
+Feature-Mapper: train-mode, Anomaly-Detector: off-mode

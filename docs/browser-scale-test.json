@@ -1,0 +1,13 @@
+{
+  "fixture": "10000 packets / 1000 source IPs / 1 server",
+  "representedIPs": 1001,
+  "overviewClusters": 5,
+  "renderedOverviewDots": 385,
+  "searchAcrossSample": true,
+  "peerPagination": true,
+  "animationAdvances": true,
+  "pauseMotion": true,
+  "reducedMotion": true,
+  "errors": [],
+  "scope": "Browser fixture, not wire throughput"
+}

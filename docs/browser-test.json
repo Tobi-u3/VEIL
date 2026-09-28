@@ -1,0 +1,13 @@
+{
+  "errors": [],
+  "realBackend": true,
+  "loginLogout": true,
+  "packets": 7518,
+  "ips": 220,
+  "groups": 9,
+  "animatedGraph": true,
+  "portLabels": true,
+  "shapPanel": true,
+  "lightDark": true,
+  "pauseResume": true
+}

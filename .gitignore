@@ -1,0 +1,9 @@
+.venv/
+frontend/node_modules/
+data/*.sqlite*
+data/live/
+vendor/KitNET-py/
+__pycache__/
+.env
+
+data/credentials.json
