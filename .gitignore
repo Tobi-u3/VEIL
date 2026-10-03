@@ -1,0 +1,30 @@
+.venv/
+frontend/node_modules/
+data/*.sqlite*
+data/live/
+vendor/KitNET-py/
+__pycache__/
+.env
+
+data/credentials.json
+
+# Installed dependencies and caches
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Generated frontend build
+/frontend/dist/
+
+# Local secrets
+.env
+.env.*
+!.env.example
+/data/credentials.json
+
+# Runtime database and sidecar files
+/data/veil.sqlite
+/data/veil.sqlite-*

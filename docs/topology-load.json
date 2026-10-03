@@ -1,0 +1,8 @@
+{
+  "packets": 10000,
+  "unique_source_ips": 1000,
+  "graph_nodes": 1001,
+  "graph_edges": 1000,
+  "ingest_and_snapshot_seconds": 0.263,
+  "scope": "Topology only; not ML or capture throughput"
+}
