@@ -5,6 +5,7 @@ import networkx as nx
 from .features import Windows,entropy,is_tcp_probe,FEATURE_SCHEMA
 from .ml import Models
 from .traffic import Traffic
+from .gnn import GraphCorrelation
 
 class Engine:
     def __init__(self,store=None):
@@ -16,7 +17,8 @@ class Engine:
         path=Path(__file__).resolve().parents[1]/'data/ja4-watchlist.json'
         self.watchlist=set(json.loads(path.read_text())) if path.exists() else set()
         self.last_ts=0;self.destinations={};self.traffic=Traffic();self.next_flush=0
-        self.anomaly_streaks={}
+        self.anomaly_streaks={};self.gnn=GraphCorrelation()
+        self.models.status['gnn']=self.gnn.status
 
     def ingest(self,e):
         if not isinstance(e,dict): raise ValueError('Event must be a JSON object')
@@ -42,6 +44,7 @@ class Engine:
         self.windows.add(e)
         if e['kind']=='packet':
             self.traffic.add(e,self.graph)
+            self.gnn.add(e)
             dst=e['dst']
             if dst in self.destinations or len(self.destinations)<1000:
                 d=self.destinations.setdefault(dst,{'start':e['ts'],'last':e['ts'],'packets':0,'bytes':0,'syn':0,'sizes2':0,'sources':Counter(),'uids':set(),'source':e.get('source','live'),'ports':set()})
@@ -142,6 +145,8 @@ class Engine:
         rates=list(self.history)
         alerts=list(self.alerts)
         now=time.time() if self.status['mode']=='live' else self.last_ts
+        topology=self.traffic.topology(self.graph,alerts,now) if view in ('all','graph') else None
+        if topology is not None:topology['gnn']=self.gnn.snapshot(now)
         return {'status':self.status,'models':self.models.status,
             'metrics':{'packets':self.traffic.count,'captured_bytes':self.traffic.bytes,'retained_packets':len(self.traffic.packets),'events':self.events,'windows':self.window_count,'alerts':len(self.alerts),
                 'processing_p95_ms':round(float(np.percentile(self.latencies,95)),2) if self.latencies else 0,
@@ -149,7 +154,7 @@ class Engine:
                 'uptime_seconds':int(time.monotonic()-self.started)},
             'alerts':alerts if view in ('all','graph','detections') else [],'history':rates,
             'packets':self.traffic.page() if view in ('all','packets') else None,
-            'graph':self.traffic.topology(self.graph,alerts,now) if view in ('all','graph') else None,
+            'graph':topology,
             'capabilities':{'reverse_traffic':'not observed','JA4':'watchlist loaded' if self.watchlist else 'no watchlist; plugin required for live fingerprints',
             'detection_scope':'TCP SYN port probing, SYN-rate, DNS, beaconing, JA4 watchlist and persistent ML anomalies; ping alone is normal',
             'capture_feed':('receiving recent metadata' if self.last_ts and time.time()-self.last_ts<10 else 'waiting / idle / stale metadata') if self.status['mode']=='live' else 'live capture not selected',

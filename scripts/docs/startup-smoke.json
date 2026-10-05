@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-03",
+  "startup_script": "passed",
+  "html_and_assets": "passed",
+  "private_api_login_logout": "passed",
+  "real_http_replay_packets": 2,
+  "scope": "actual local Uvicorn server; synthetic replay; not network capture"
+}

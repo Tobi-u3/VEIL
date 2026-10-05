@@ -1,0 +1,132 @@
+{
+  "scope": "synthetic demonstration only; real-network accuracy unverified",
+  "threshold": 0.8,
+  "split_graphs": {
+    "train": 120,
+    "validation": 30,
+    "test": 30
+  },
+  "validation": {
+    "nodes": 1067,
+    "macro_f1": 0.9921941932413137,
+    "background_false_flag_rate": 0.0,
+    "pattern_recall_at_threshold": 0.983739837398374,
+    "report": {
+      "background": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 944.0
+      },
+      "scan_pattern": {
+        "precision": 1.0,
+        "recall": 0.9642857142857143,
+        "f1-score": 0.9818181818181818,
+        "support": 28.0
+      },
+      "syn_convergence": {
+        "precision": 0.9895833333333334,
+        "recall": 1.0,
+        "f1-score": 0.9947643979057592,
+        "support": 95.0
+      },
+      "accuracy": 0.9990627928772259,
+      "macro avg": {
+        "precision": 0.9965277777777778,
+        "recall": 0.9880952380952381,
+        "f1-score": 0.9921941932413137,
+        "support": 1067.0
+      },
+      "weighted avg": {
+        "precision": 0.9990725554514215,
+        "recall": 0.9990627928772259,
+        "f1-score": 0.9990567262342608,
+        "support": 1067.0
+      }
+    }
+  },
+  "test": {
+    "nodes": 982,
+    "macro_f1": 0.9932705912699767,
+    "background_false_flag_rate": 0.001160092807424594,
+    "pattern_recall_at_threshold": 1.0,
+    "report": {
+      "background": {
+        "precision": 1.0,
+        "recall": 0.9988399071925754,
+        "f1-score": 0.9994196169471852,
+        "support": 862.0
+      },
+      "scan_pattern": {
+        "precision": 0.9615384615384616,
+        "recall": 1.0,
+        "f1-score": 0.9803921568627451,
+        "support": 25.0
+      },
+      "syn_convergence": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 95.0
+      },
+      "accuracy": 0.9989816700610998,
+      "macro avg": {
+        "precision": 0.9871794871794872,
+        "recall": 0.9996133023975252,
+        "f1-score": 0.9932705912699767,
+        "support": 982.0
+      },
+      "weighted avg": {
+        "precision": 0.9990208365972113,
+        "recall": 0.9989816700610998,
+        "f1-score": 0.9989913581772325,
+        "support": 982.0
+      }
+    }
+  },
+  "no_neighbor_ablation": {
+    "nodes": 982,
+    "macro_f1": 0.8952470666832082,
+    "background_false_flag_rate": 0.0,
+    "pattern_recall_at_threshold": 0.7833333333333333,
+    "report": {
+      "background": {
+        "precision": 0.9869668246445498,
+        "recall": 0.9663573085846868,
+        "f1-score": 0.9765533411488863,
+        "support": 862.0
+      },
+      "scan_pattern": {
+        "precision": 0.9523809523809523,
+        "recall": 0.8,
+        "f1-score": 0.8695652173913043,
+        "support": 25.0
+      },
+      "syn_convergence": {
+        "precision": 0.7606837606837606,
+        "recall": 0.9368421052631579,
+        "f1-score": 0.839622641509434,
+        "support": 95.0
+      },
+      "accuracy": 0.9592668024439919,
+      "macro avg": {
+        "precision": 0.9000105125697543,
+        "recall": 0.9010664712826149,
+        "f1-score": 0.8952470666832082,
+        "support": 982.0
+      },
+      "weighted avg": {
+        "precision": 0.9641954011385775,
+        "recall": 0.9592668024439919,
+        "f1-score": 0.9605827509659051,
+        "support": 982.0
+      }
+    }
+  },
+  "notes": [
+    "Entire scenarios separated across splits.",
+    "Synthetic labels are generator labels, not proof of attacks.",
+    "Ablation removes neighbor messages at inference; it is not a separately retrained baseline.",
+    "No claim of improvement over RF/IF or production accuracy."
+  ]
+}

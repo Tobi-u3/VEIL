@@ -1,0 +1,58 @@
+/workspace/scratch/cba379dab12a/ui-source/veil/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_expiry_and_host (test_api.APITests.test_expiry_and_host) ... ok
+test_https_and_fail_closed (test_api.APITests.test_https_and_fail_closed) ... ok
+test_invalid_and_throttle (test_api.APITests.test_invalid_and_throttle) ... ok
+test_login_csrf_logout_and_replay (test_api.APITests.test_login_csrf_logout_and_replay) ... ok
+test_private_endpoints_and_socket (test_api.APITests.test_private_endpoints_and_socket) ... ok
+test_bulk_download_is_not_scan_or_ddos (test_detection_regressions.DetectionRegressions.test_bulk_download_is_not_scan_or_ddos) ... ok
+test_fast_tcp_port_scan_has_model_and_probe_evidence (test_detection_regressions.DetectionRegressions.test_fast_tcp_port_scan_has_model_and_probe_evidence) ... ok
+test_legacy_feature_artifact_is_rejected (test_detection_regressions.DetectionRegressions.test_legacy_feature_artifact_is_rejected) ... ok
+test_ping_is_captured_but_is_not_a_scan (test_detection_regressions.DetectionRegressions.test_ping_is_captured_but_is_not_a_scan) ... ok
+test_probe_history_expires (test_detection_regressions.DetectionRegressions.test_probe_history_expires) ... ok
+test_scan_spanning_several_windows_is_detected (test_detection_regressions.DetectionRegressions.test_scan_spanning_several_windows_is_detected) ... ok
+test_single_port_syn_burst_is_not_port_scan (test_detection_regressions.DetectionRegressions.test_single_port_syn_burst_is_not_port_scan) ... ok
+test_synack_replies_are_not_port_probes (test_detection_regressions.DetectionRegressions.test_synack_replies_are_not_port_probes) ... ok
+test_aggregate_uses_actual_port_count (test_explanations.ExplanationTests.test_aggregate_uses_actual_port_count) ... ok
+test_demo_diversity (test_explanations.ExplanationTests.test_demo_diversity) ... ok
+test_observed_ports_and_transport_counts (test_explanations.ExplanationTests.test_observed_ports_and_transport_counts) ... ok
+test_shap_reconstructs_scores (test_explanations.ExplanationTests.test_shap_reconstructs_scores) ... ok
+test_benign_cosource_not_correlated_by_neighbor_alone (test_gnn.GNNTests.test_benign_cosource_not_correlated_by_neighbor_alone) ... ok
+test_cache_and_finite_probabilities (test_gnn.GNNTests.test_cache_and_finite_probabilities) ... ok
+test_capacity_abstains (test_gnn.GNNTests.test_capacity_abstains) ... ok
+test_ip_rename_equivariance_and_neighbor_influence (test_gnn.GNNTests.test_ip_rename_equivariance_and_neighbor_influence) ... ok
+test_late_packets_do_not_resurrect_expired_window (test_gnn.GNNTests.test_late_packets_do_not_resurrect_expired_window) ... ok
+test_missing_corrupt_disabled_models (test_gnn.GNNTests.test_missing_corrupt_disabled_models) ... ok
+test_node_capacity_abstains (test_gnn.GNNTests.test_node_capacity_abstains) ... ok
+test_normal_ping_not_flagged (test_gnn.GNNTests.test_normal_ping_not_flagged) ... ok
+test_probe_flags_and_window_expiry (test_gnn.GNNTests.test_probe_flags_and_window_expiry) ... ok
+test_scenario_leakage_rejected (test_gnn.GNNTests.test_scenario_leakage_rejected) ... ok
+test_synthetic_scan_pattern_and_correlations (test_gnn.GNNTests.test_synthetic_scan_pattern_and_correlations) ... ok
+test_bad_timestamp (test_pipeline.PipelineTests.test_bad_timestamp) ... ok
+test_capacity (test_pipeline.PipelineTests.test_capacity) ... ok
+test_demo_detections_and_no_fabricated_ratios (test_pipeline.PipelineTests.test_demo_detections_and_no_fabricated_ratios) ... ok
+test_distributed_rate (test_pipeline.PipelineTests.test_distributed_rate) ... ok
+test_entropy (test_pipeline.PipelineTests.test_entropy) ... ok
+test_ja4_observed_only (test_pipeline.PipelineTests.test_ja4_observed_only) ... ok
+test_normal_no_rule_alert (test_pipeline.PipelineTests.test_normal_no_rule_alert) ... ok
+test_packet_sequence_not_beacon (test_pipeline.PipelineTests.test_packet_sequence_not_beacon) ... ok
+test_store (test_pipeline.PipelineTests.test_store) ... ok
+test_tail_partial_rotation_and_invalid (test_pipeline.PipelineTests.test_tail_partial_rotation_and_invalid) ... ok
+test_window_and_reverse_missing (test_pipeline.PipelineTests.test_window_and_reverse_missing) ... ok
+test_aggregate_alert_links_actual_sources (test_traffic.TrafficTests.test_aggregate_alert_links_actual_sources) ... ok
+test_buffer_and_cursor_no_duplicates (test_traffic.TrafficTests.test_buffer_and_cursor_no_duplicates) ... ok
+test_every_packet_not_protocol_events (test_traffic.TrafficTests.test_every_packet_not_protocol_events) ... ok
+test_external_and_ipv6_not_filtered (test_traffic.TrafficTests.test_external_and_ipv6_not_filtered) ... ok
+test_warning_persists_after_normal_and_expiry (test_traffic.TrafficTests.test_warning_persists_after_normal_and_expiry) ... ok
+test_websocket_views_bounded (test_traffic.TrafficTests.test_websocket_views_bounded) ... ok
+test_invalid_events_do_not_pollute_state (test_working_model.WorkingModelTests.test_invalid_events_do_not_pollute_state) ... ok
+test_isolation_score_matches_estimator (test_working_model.WorkingModelTests.test_isolation_score_matches_estimator) ... ok
+test_live_log_to_authenticated_api_and_websocket (test_working_model.WorkingModelTests.test_live_log_to_authenticated_api_and_websocket) ... ok
+test_saved_alerts_survive_restart (test_working_model.WorkingModelTests.test_saved_alerts_survive_restart) ... ok
+test_unknown_anomaly_preserves_detector_evidence (test_working_model.WorkingModelTests.test_unknown_anomaly_preserves_detector_evidence) ... ok
+test_unsupported_classifier_vote_does_not_invent_scan (test_working_model.WorkingModelTests.test_unsupported_classifier_vote_does_not_invent_scan) ... ok
+
+----------------------------------------------------------------------
+Ran 51 tests in 28.240s
+
+OK

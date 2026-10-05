@@ -1,0 +1,9 @@
+{
+  "scope": "synthetic demonstration benign baseline only",
+  "fit_rows": 2100,
+  "calibration_rows": 900,
+  "threshold": 0.726182252850846,
+  "score_definition": "-score_samples; larger is more unusual",
+  "calibration_exceedance_fraction": 0.0,
+  "warning": "Calibration fraction is not operational false-positive rate or detection accuracy."
+}

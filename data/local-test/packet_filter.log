@@ -1,0 +1,1 @@
+{"ts":1791032877.851095,"node":"zeek","filter":"ip and dst host 10.115.113.2","init":true,"success":true}

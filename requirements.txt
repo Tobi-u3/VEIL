@@ -9,3 +9,5 @@ psycopg[binary]==3.3.6
 scapy==2.7.0
 httpx==0.28.1
 joblib==1.5.3
+scipy==1.18.1
+threadpoolctl==3.7.0

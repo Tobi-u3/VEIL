@@ -1,3 +1,7 @@
+# GNN extension
+
+This build starts from VEIL_Detection_Fix, preserves the original UI, and adds GraphSAGE IP correlation. See GNN.md for installation, validation, and limits.
+
 # Detection and contrast corrections — 2026-10-03
 
 The user's ICMP ping from a RHEL VirtualBox guest was successfully captured. No port-scan alert for that test is expected: ordinary ping is reachability traffic, not TCP port probing.

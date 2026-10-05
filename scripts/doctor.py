@@ -11,7 +11,7 @@ p = argparse.ArgumentParser(description=__doc__)
 p.add_argument('--require-account',action='store_true')
 a = p.parse_args()
 failed = False
-for name in ('fastapi','uvicorn','numpy','pandas','scikit-learn','shap','networkx','scapy','httpx','joblib'):
+for name in ('fastapi','uvicorn','numpy','pandas','scikit-learn','shap','networkx','scapy','httpx','joblib','scipy','threadpoolctl'):
     try: print('OK',name,importlib.metadata.version(name))
     except importlib.metadata.PackageNotFoundError:
         print('FAIL missing dependency:',name);failed=True
@@ -28,6 +28,9 @@ if not failed:
         print('FAIL model loading:',str(exc))
         print('For demonstration artifacts: python scripts/train.py and python scripts/train_isolation.py --synthetic-demo')
         failed=True
+from backend.gnn import GraphCorrelation
+gnn=GraphCorrelation()
+print('GNN:',gnn.status,gnn.error or '')
 if a.require_account:
     try:
         from backend.auth import Auth

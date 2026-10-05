@@ -1,3 +1,7 @@
+# GNN extension — original UI
+
+This build adds trained, experimental IP correlation to the selected Detection Fix prototype. See [GNN setup and model limits](docs/GNN.md). The original dashboard layout is retained.
+
 # VEIL — working passive threat-detection prototype
 
 Team Blue Lock · SIH26145. Start with the replay, then validate the live namespace lab on Kali. This version uses **RandomForest + IsolationForest + SHAP**, FastAPI/WebSockets, React/TypeScript/Tailwind/React Flow, and SQLite (optional PostgreSQL through psycopg). JA4 is optional and must come from the installed Zeek plugin. No SQLAlchemy, KitNET, River, payload storage, active production queries or inline blocking.
@@ -139,7 +143,7 @@ Alerts and feature windows are persisted locally in `data/veil.sqlite`; the late
 
 The live follower tolerates partial lines, malformed records, log truncation and rotation. It reads an existing log from the beginning after restart; this prototype does **not** implement exactly-once ingestion, so restarting against an old log may reproduce alerts. For a clean demonstration, stop Zeek/backend, move old capture logs aside, then start capture and the backend with a fresh log. Preserve logs required as evidence.
 
-No outgoing production traffic is observed in this lab's strict incoming-only scope. Exfiltration, reverse traffic ratios and attack success cannot be confirmed. The graph shows observed IP relationships and alert links, not a trained GNN or proof that an address is malicious. Network mirroring and monitor isolation require verification at deployment.
+No outgoing production traffic is observed in this lab's strict incoming-only scope. Exfiltration, reverse traffic ratios and attack success cannot be confirmed. The graph shows observed IP relationships, alert links, and experimental trained GNN correlation. None of these proves that an address is malicious. Network mirroring and monitor isolation require verification at deployment.
 
 ## 5. JA4, optional PostgreSQL and packet replay
 

@@ -1,0 +1,5 @@
+{
+  "csv_training_path": "passed",
+  "same_file_validation_rejected": "passed",
+  "fixtures": "synthetic, in temporary project; bundled model unchanged"
+}

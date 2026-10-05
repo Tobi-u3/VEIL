@@ -12,7 +12,9 @@ type Packet={sequence:number;timestamp:number;src:string;dst:string;sport:number
 type Page={items:Packet[];next_before:number|null;retained:number;capacity:number;total_captured:number;oldest_sequence:number|null;newest_sequence:number;expired:number};
 export type Host={id:string;scope:string;ip_version:number;prefix:string;roles:string[];alert_ids:string[];packets:number;bytes:number;last_seen:number;peers:string[];recent:boolean};
 export type Edge={id:string;source:string;target:string;packets:number;bytes:number;first:number|null;last:number;recent:boolean;alert_ids:string[];suspicious:boolean;ports?:{protocol:string;port:number;packets:number}[];ports_truncated?:boolean};
-export type Graph={nodes:Host[];edges:Edge[];recent_seconds:number;linked_alerts:number;capacity:number;capacity_drops:number;scope:string};
+export type GNNNode={label:string;score:number;flagged:boolean;scores:Record<string,number>;evidence:Record<string,number>};
+export type GNNResult={status:string;available:boolean;experimental:boolean;scope:string;window_seconds:number;window_end:number;threshold:number|null;nodes:Record<string,GNNNode>;correlations:{destination:string;pattern:string;sources:string[];source_count:number;embedding_similarity:number;minimum_vote:number;evidence:string}[];omitted_correlations:number;reason:string|null;inference_ms:number;dropped_packets:number};
+export type Graph={gnn?:GNNResult;nodes:Host[];edges:Edge[];recent_seconds:number;linked_alerts:number;capacity:number;capacity_drops:number;scope:string};
 type State={status:{mode:string;last_event:number|null;last_error:string|null};metrics:Record<string,number>;alerts:Alert[];models:Record<string,string>;capabilities:Record<string,string>;packets:Page|null;graph:Graph|null};
 let csrf='';
 async function api(url:string,options:RequestInit={}){const response=await fetch(url,{...options,headers:{...options.headers,...(options.method&&options.method!=='GET'?{'X-CSRF-Token':csrf}:{})}});if(response.status===401)window.dispatchEvent(new Event('veil-signout'));return response}

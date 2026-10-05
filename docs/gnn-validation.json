@@ -1,0 +1,10 @@
+{
+  "tests": 51,
+  "result": "passed",
+  "suite_seconds": 28.24,
+  "frontend": "TypeScript and Vite build passed",
+  "browser": "Login, graph, IP selection, light/dark, collapse and GNN rings checked; no page errors",
+  "data": "synthetic metadata only",
+  "base": "VEIL_Detection_Fix.zip; original UI",
+  "wire_capture_tested": false
+}

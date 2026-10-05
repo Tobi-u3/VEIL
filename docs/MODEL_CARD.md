@@ -20,3 +20,7 @@ Normal high-rate transfers and sparse ping-like traffic were added to the synthe
 IsolationForest alerts require three consecutive populated outlier windows, each with >=4 packets and gaps <=5 seconds. This reduces transient false alarms but increases alert delay and can miss short-lived anomalies. A persistent outlier is still a suspicion, not proof of malicious traffic.
 
 `train.py --train-csv TRAIN --validation-csv VALIDATION` fits the classifier on independently labelled metadata windows and reports metrics on a separate validation file. It rejects the same file for both roles and requires later validation timestamps when timestamp columns exist. The operator must ensure label validity and separation of related sessions; this utility does not establish ground truth or automatically eliminate leakage.
+
+
+## Graph neural network extension
+See GNN.md and models/gnn-report.json for architecture, synthetic training scope, raw evaluation, evidence gates, and capacity limits. GNN predictions support graph review only; they do not create alerts.

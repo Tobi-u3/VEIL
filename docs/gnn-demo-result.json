@@ -1,0 +1,4256 @@
+{
+  "status": "ready: synthetic demonstration only; real-network accuracy unverified",
+  "available": true,
+  "experimental": true,
+  "scope": "synthetic demonstration only; real-network accuracy unverified",
+  "window_seconds": 30,
+  "window_end": 1700000031.39301,
+  "threshold": 0.8,
+  "nodes": {
+    "10.77.0.20": {
+      "label": "scan_pattern",
+      "score": 0.99899,
+      "flagged": true,
+      "scores": {
+        "background": 0.00101,
+        "scan_pattern": 0.99899,
+        "syn_convergence": 1e-05
+      },
+      "evidence": {
+        "sent_packets": 0,
+        "received_packets": 3486,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.705,
+        "probe_ports": 0,
+        "destinations": 0,
+        "sources": 31
+      }
+    },
+    "10.77.0.21": {
+      "label": "syn_convergence",
+      "score": 0.90955,
+      "flagged": true,
+      "scores": {
+        "background": 0.00234,
+        "scan_pattern": 0.0881,
+        "syn_convergence": 0.90955
+      },
+      "evidence": {
+        "sent_packets": 0,
+        "received_packets": 2024,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.72,
+        "probe_ports": 0,
+        "destinations": 0,
+        "sources": 79
+      }
+    },
+    "10.77.0.22": {
+      "label": "background",
+      "score": 0.99953,
+      "flagged": false,
+      "scores": {
+        "background": 0.99953,
+        "scan_pattern": 0.00035,
+        "syn_convergence": 0.00012
+      },
+      "evidence": {
+        "sent_packets": 0,
+        "received_packets": 455,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 0,
+        "sources": 27
+      }
+    },
+    "10.77.0.23": {
+      "label": "background",
+      "score": 0.99966,
+      "flagged": false,
+      "scores": {
+        "background": 0.99966,
+        "scan_pattern": 0.00027,
+        "syn_convergence": 7e-05
+      },
+      "evidence": {
+        "sent_packets": 0,
+        "received_packets": 434,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 0,
+        "sources": 26
+      }
+    },
+    "10.77.0.24": {
+      "label": "background",
+      "score": 0.99967,
+      "flagged": false,
+      "scores": {
+        "background": 0.99967,
+        "scan_pattern": 0.00026,
+        "syn_convergence": 7e-05
+      },
+      "evidence": {
+        "sent_packets": 0,
+        "received_packets": 436,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 0,
+        "sources": 26
+      }
+    },
+    "10.77.0.25": {
+      "label": "background",
+      "score": 0.99967,
+      "flagged": false,
+      "scores": {
+        "background": 0.99967,
+        "scan_pattern": 0.00026,
+        "syn_convergence": 7e-05
+      },
+      "evidence": {
+        "sent_packets": 0,
+        "received_packets": 434,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 0,
+        "sources": 26
+      }
+    },
+    "10.77.0.30": {
+      "label": "background",
+      "score": 0.99994,
+      "flagged": false,
+      "scores": {
+        "background": 0.99994,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 1e-05
+      },
+      "evidence": {
+        "sent_packets": 560,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.100": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.101": {
+      "label": "background",
+      "score": 0.99994,
+      "flagged": false,
+      "scores": {
+        "background": 0.99994,
+        "scan_pattern": 6e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.102": {
+      "label": "background",
+      "score": 0.99992,
+      "flagged": false,
+      "scores": {
+        "background": 0.99992,
+        "scan_pattern": 0.0,
+        "syn_convergence": 8e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.103": {
+      "label": "background",
+      "score": 0.99992,
+      "flagged": false,
+      "scores": {
+        "background": 0.99992,
+        "scan_pattern": 0.0,
+        "syn_convergence": 8e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.104": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.105": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.106": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.107": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.108": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.109": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.110": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.111": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.112": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.113": {
+      "label": "background",
+      "score": 0.99994,
+      "flagged": false,
+      "scores": {
+        "background": 0.99994,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.114": {
+      "label": "background",
+      "score": 0.99992,
+      "flagged": false,
+      "scores": {
+        "background": 0.99992,
+        "scan_pattern": 0.0,
+        "syn_convergence": 8e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.115": {
+      "label": "background",
+      "score": 0.99991,
+      "flagged": false,
+      "scores": {
+        "background": 0.99991,
+        "scan_pattern": 0.0,
+        "syn_convergence": 9e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.116": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.117": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.118": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.1.119": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.100": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.101": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.102": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.103": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.104": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.105": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.106": {
+      "label": "background",
+      "score": 0.99991,
+      "flagged": false,
+      "scores": {
+        "background": 0.99991,
+        "scan_pattern": 0.0,
+        "syn_convergence": 9e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.107": {
+      "label": "background",
+      "score": 0.99992,
+      "flagged": false,
+      "scores": {
+        "background": 0.99992,
+        "scan_pattern": 0.0,
+        "syn_convergence": 8e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.108": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.109": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.110": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.111": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.112": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.113": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.114": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.115": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.116": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.117": {
+      "label": "background",
+      "score": 0.99994,
+      "flagged": false,
+      "scores": {
+        "background": 0.99994,
+        "scan_pattern": 6e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.118": {
+      "label": "background",
+      "score": 0.99991,
+      "flagged": false,
+      "scores": {
+        "background": 0.99991,
+        "scan_pattern": 0.0,
+        "syn_convergence": 9e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.2.119": {
+      "label": "background",
+      "score": 0.99991,
+      "flagged": false,
+      "scores": {
+        "background": 0.99991,
+        "scan_pattern": 0.0,
+        "syn_convergence": 9e-05
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.100": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.101": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.102": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.103": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.104": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.105": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.106": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.107": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.108": {
+      "label": "background",
+      "score": 0.99994,
+      "flagged": false,
+      "scores": {
+        "background": 0.99994,
+        "scan_pattern": 6e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.109": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.110": {
+      "label": "background",
+      "score": 0.99992,
+      "flagged": false,
+      "scores": {
+        "background": 0.99992,
+        "scan_pattern": 0.0,
+        "syn_convergence": 8e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.111": {
+      "label": "background",
+      "score": 0.99991,
+      "flagged": false,
+      "scores": {
+        "background": 0.99991,
+        "scan_pattern": 0.0,
+        "syn_convergence": 9e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.112": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.113": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.114": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.115": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.116": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.117": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.118": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.3.119": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.100": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.101": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.102": {
+      "label": "background",
+      "score": 0.99992,
+      "flagged": false,
+      "scores": {
+        "background": 0.99992,
+        "scan_pattern": 0.0,
+        "syn_convergence": 8e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.103": {
+      "label": "background",
+      "score": 0.99991,
+      "flagged": false,
+      "scores": {
+        "background": 0.99991,
+        "scan_pattern": 0.0,
+        "syn_convergence": 8e-05
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.104": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.105": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.106": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.107": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.108": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.109": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.110": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.111": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.112": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.113": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.114": {
+      "label": "background",
+      "score": 0.99992,
+      "flagged": false,
+      "scores": {
+        "background": 0.99992,
+        "scan_pattern": 0.0,
+        "syn_convergence": 8e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.115": {
+      "label": "background",
+      "score": 0.99991,
+      "flagged": false,
+      "scores": {
+        "background": 0.99991,
+        "scan_pattern": 0.0,
+        "syn_convergence": 8e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.116": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.117": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.118": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "10.80.4.119": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.100": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.101": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.102": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.103": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.104": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.105": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.106": {
+      "label": "background",
+      "score": 0.99991,
+      "flagged": false,
+      "scores": {
+        "background": 0.99991,
+        "scan_pattern": 0.0,
+        "syn_convergence": 9e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.107": {
+      "label": "background",
+      "score": 0.99991,
+      "flagged": false,
+      "scores": {
+        "background": 0.99991,
+        "scan_pattern": 0.0,
+        "syn_convergence": 9e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.108": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.109": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.110": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.111": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.112": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.113": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.114": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.115": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.116": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.117": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.118": {
+      "label": "background",
+      "score": 0.99992,
+      "flagged": false,
+      "scores": {
+        "background": 0.99992,
+        "scan_pattern": 0.0,
+        "syn_convergence": 8e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "172.20.1.119": {
+      "label": "background",
+      "score": 0.99992,
+      "flagged": false,
+      "scores": {
+        "background": 0.99992,
+        "scan_pattern": 0.0,
+        "syn_convergence": 8e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.100": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.101": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.102": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.103": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.104": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.105": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.106": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.107": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.108": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.109": {
+      "label": "background",
+      "score": 0.99994,
+      "flagged": false,
+      "scores": {
+        "background": 0.99994,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.110": {
+      "label": "background",
+      "score": 0.99991,
+      "flagged": false,
+      "scores": {
+        "background": 0.99991,
+        "scan_pattern": 0.0,
+        "syn_convergence": 9e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.111": {
+      "label": "background",
+      "score": 0.99992,
+      "flagged": false,
+      "scores": {
+        "background": 0.99992,
+        "scan_pattern": 0.0,
+        "syn_convergence": 8e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.112": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.113": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.114": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.115": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.116": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.117": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.118": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.119": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.150": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.151": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.152": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.153": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.154": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.155": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.156": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.157": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.158": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.159": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.160": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.161": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.162": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.163": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.164": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.165": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "192.0.2.40": {
+      "label": "scan_pattern",
+      "score": 0.98138,
+      "flagged": false,
+      "scores": {
+        "background": 0.01193,
+        "scan_pattern": 0.98138,
+        "syn_convergence": 0.00669
+      },
+      "evidence": {
+        "sent_packets": 9,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.100": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.101": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.102": {
+      "label": "background",
+      "score": 0.99991,
+      "flagged": false,
+      "scores": {
+        "background": 0.99991,
+        "scan_pattern": 0.0,
+        "syn_convergence": 9e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.103": {
+      "label": "background",
+      "score": 0.99991,
+      "flagged": false,
+      "scores": {
+        "background": 0.99991,
+        "scan_pattern": 0.0,
+        "syn_convergence": 9e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.104": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.105": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.106": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.107": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.108": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.109": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.110": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.111": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.112": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.113": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.114": {
+      "label": "background",
+      "score": 0.9999,
+      "flagged": false,
+      "scores": {
+        "background": 0.9999,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0001
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.115": {
+      "label": "background",
+      "score": 0.99992,
+      "flagged": false,
+      "scores": {
+        "background": 0.99992,
+        "scan_pattern": 0.0,
+        "syn_convergence": 8e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.116": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.117": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.118": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.119": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.150": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.151": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.152": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.153": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.154": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.155": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.156": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.157": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.158": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.159": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.160": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.161": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.162": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.163": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.164": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.165": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.23": {
+      "label": "background",
+      "score": 0.99978,
+      "flagged": false,
+      "scores": {
+        "background": 0.99978,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.00022
+      },
+      "evidence": {
+        "sent_packets": 93,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "198.51.100.41": {
+      "label": "syn_convergence",
+      "score": 0.98869,
+      "flagged": false,
+      "scores": {
+        "background": 0.00767,
+        "scan_pattern": 0.00364,
+        "syn_convergence": 0.98869
+      },
+      "evidence": {
+        "sent_packets": 9,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.100": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.101": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.102": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.103": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.104": {
+      "label": "background",
+      "score": 0.99994,
+      "flagged": false,
+      "scores": {
+        "background": 0.99994,
+        "scan_pattern": 6e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.105": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.106": {
+      "label": "background",
+      "score": 0.9999,
+      "flagged": false,
+      "scores": {
+        "background": 0.9999,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0001
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.107": {
+      "label": "background",
+      "score": 0.99991,
+      "flagged": false,
+      "scores": {
+        "background": 0.99991,
+        "scan_pattern": 0.0,
+        "syn_convergence": 9e-05
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.108": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.109": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.110": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.111": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.112": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.113": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 16,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.114": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.115": {
+      "label": "background",
+      "score": 1.0,
+      "flagged": false,
+      "scores": {
+        "background": 1.0,
+        "scan_pattern": 0.0,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.116": {
+      "label": "background",
+      "score": 0.99995,
+      "flagged": false,
+      "scores": {
+        "background": 0.99995,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.117": {
+      "label": "background",
+      "score": 0.99994,
+      "flagged": false,
+      "scores": {
+        "background": 0.99994,
+        "scan_pattern": 5e-05,
+        "syn_convergence": 0.0
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.118": {
+      "label": "background",
+      "score": 0.99991,
+      "flagged": false,
+      "scores": {
+        "background": 0.99991,
+        "scan_pattern": 0.0,
+        "syn_convergence": 8e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.119": {
+      "label": "background",
+      "score": 0.99991,
+      "flagged": false,
+      "scores": {
+        "background": 0.99991,
+        "scan_pattern": 0.0,
+        "syn_convergence": 9e-05
+      },
+      "evidence": {
+        "sent_packets": 17,
+        "received_packets": 0,
+        "out_syn_fraction": 0.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 0,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.150": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.151": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.152": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.153": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.154": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.155": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.156": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.157": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.158": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.159": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.160": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.161": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.162": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.163": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.164": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.165": {
+      "label": "syn_convergence",
+      "score": 0.9954,
+      "flagged": true,
+      "scores": {
+        "background": 0.0028,
+        "scan_pattern": 0.00179,
+        "syn_convergence": 0.9954
+      },
+      "evidence": {
+        "sent_packets": 30,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.42": {
+      "label": "syn_convergence",
+      "score": 0.98869,
+      "flagged": false,
+      "scores": {
+        "background": 0.00767,
+        "scan_pattern": 0.00364,
+        "syn_convergence": 0.98869
+      },
+      "evidence": {
+        "sent_packets": 9,
+        "received_packets": 0,
+        "out_syn_fraction": 1.0,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 1,
+        "destinations": 1,
+        "sources": 0
+      }
+    },
+    "203.0.113.45": {
+      "label": "scan_pattern",
+      "score": 0.96085,
+      "flagged": true,
+      "scores": {
+        "background": 0.00179,
+        "scan_pattern": 0.96085,
+        "syn_convergence": 0.03736
+      },
+      "evidence": {
+        "sent_packets": 2468,
+        "received_packets": 0,
+        "out_syn_fraction": 0.992,
+        "in_syn_fraction": 0.0,
+        "probe_ports": 49,
+        "destinations": 2,
+        "sources": 0
+      }
+    }
+  },
+  "correlations": [
+    {
+      "destination": "10.77.0.21",
+      "pattern": "syn_convergence",
+      "sources": [
+        "192.0.2.150",
+        "192.0.2.151",
+        "192.0.2.152",
+        "192.0.2.153",
+        "192.0.2.154",
+        "192.0.2.155",
+        "192.0.2.156",
+        "192.0.2.157",
+        "192.0.2.158",
+        "192.0.2.159",
+        "192.0.2.160",
+        "192.0.2.161",
+        "192.0.2.162",
+        "192.0.2.163",
+        "192.0.2.164",
+        "192.0.2.165",
+        "198.51.100.150",
+        "198.51.100.151",
+        "198.51.100.152",
+        "198.51.100.153",
+        "198.51.100.154",
+        "198.51.100.155",
+        "198.51.100.156",
+        "198.51.100.157",
+        "198.51.100.158",
+        "198.51.100.159",
+        "198.51.100.160",
+        "198.51.100.161",
+        "198.51.100.162",
+        "198.51.100.163",
+        "198.51.100.164",
+        "198.51.100.165",
+        "203.0.113.150",
+        "203.0.113.151",
+        "203.0.113.152",
+        "203.0.113.153",
+        "203.0.113.154",
+        "203.0.113.155",
+        "203.0.113.156",
+        "203.0.113.157",
+        "203.0.113.158",
+        "203.0.113.159",
+        "203.0.113.160",
+        "203.0.113.161",
+        "203.0.113.162",
+        "203.0.113.163",
+        "203.0.113.164",
+        "203.0.113.165"
+      ],
+      "source_count": 48,
+      "embedding_similarity": 1.0,
+      "minimum_vote": 0.9954,
+      "evidence": "48 observed sources share this destination and the same GNN pattern; similarity is not proof of coordination."
+    }
+  ],
+  "omitted_correlations": 0,
+  "dropped_packets": 0,
+  "reason": null,
+  "inference_ms": 31.59,
+  "role": "supporting graph signal; does not create alerts"
+}

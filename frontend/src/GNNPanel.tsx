@@ -1,0 +1,17 @@
+import {useState} from 'react';
+import {Brain,ChevronRight} from 'lucide-react';
+import type {GNNResult} from './main';
+const pretty=(s:string)=>s.replaceAll('_',' ');
+export function GNNPanel({result:r,selectedId,select}:{result?:GNNResult;selectedId:string|null;select:(id:string)=>void}){
+ const [expanded,setExpanded]=useState(true);
+ const node=selectedId?r?.nodes[selectedId]:undefined;
+ const flagged=Object.entries(r?.nodes??{}).filter(([,n])=>n.flagged).sort((a,b)=>b[1].score-a[1].score);
+ return <section className="panel gnn-panel" aria-label="GNN IP correlation">
+ <div className="gnn-heading"><div><Brain size={23}/><h2>GNN IP correlation</h2><span className="pill">Experimental</span></div><button className="button secondary" aria-expanded={expanded} onClick={()=>setExpanded(!expanded)}>{expanded?'Collapse':'Expand'}</button></div>
+ <p>{r?.available?`Directed GraphSAGE · ${r.window_seconds}-second window · ${Object.keys(r.nodes).length} IPs analyzed · ${r.inference_ms.toFixed(1)} ms`:`${r?.status??'Connecting'} · ${r?.reason??'Waiting for model status'}`}</p>
+ <p className="footnote">{r?.scope??'Model status unavailable'}. Scores are model votes, not attack probabilities. A destination may be involved as a target.</p>
+ {expanded&&r?.available&&<div className="gnn-grid"><div><h3>{node?'Selected IP pattern':'Pattern candidates'}</h3>
+ {node?<><strong className="mono">{selectedId}</strong><p>{pretty(node.label)} · {(node.score*100).toFixed(1)}% vote · {node.flagged?'meets review criteria':'not selected for review'}</p><div className="gnn-evidence">{Object.entries(node.evidence).map(([k,v])=><span key={k}>{pretty(k)} <b>{k.includes('fraction')?`${(v*100).toFixed(1)}%`:v.toLocaleString()}</b></span>)}</div><p className="footnote">Observed metadata supports review; this is not a causal explanation of the GNN prediction. SHAP continues to explain the Random Forest only.</p></>:<><p>{flagged.length} IPs meet observed-evidence criteria and the {((r.threshold??1)*100).toFixed(0)}% review threshold.</p><div className="gnn-list">{flagged.slice(0,12).map(([ip,n])=><button key={ip} onClick={()=>select(ip)}><span className="mono">{ip}</span><span>{pretty(n.label)} · {(n.score*100).toFixed(0)}%</span><ChevronRight size={16}/></button>)}</div>{!flagged.length&&<p>No graph pattern crossed the review threshold.</p>}{flagged.length>12&&<p className="footnote">First 12 shown. Search any IP in the graph to inspect its score.</p>}</>}
+ </div><div><h3>Shared-destination correlations</h3><p>Observed co-sources with the same high-scoring GNN pattern and supporting source behavior.</p><div className="gnn-list">{r.correlations.map(g=><details key={g.destination+g.pattern}><summary>{g.source_count} sources → {g.destination} · {pretty(g.pattern)}</summary><p>{g.evidence}</p><p>Embedding similarity: {g.embedding_similarity.toFixed(3)} · minimum model vote: {(g.minimum_vote*100).toFixed(1)}%</p><div className="gnn-source-buttons">{g.sources.map(ip=><button key={ip} onClick={()=>select(ip)}>{ip}</button>)}</div></details>)}</div>{!r.correlations.length&&<p>No qualifying shared-destination group in this window.</p>}{r.omitted_correlations>0&&<p>{r.omitted_correlations} additional groups omitted.</p>}<p className="footnote">These are analytical relationships. Graph arrows still show captured traffic only; red markers still refer to retained detection records.</p></div></div>}
+ </section>
+}
