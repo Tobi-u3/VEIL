@@ -1,0 +1,47 @@
+name: Blue Lock security gate
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: veil-sonar-main
+  cancel-in-progress: false
+jobs:
+  scan:
+    if: github.ref == 'refs/heads/main'
+    runs-on: [self-hosted, linux, x64, blue-lock]
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Preflight
+        env:
+          BLUE_LOCK_URL: http://127.0.0.1:3000
+          SONAR_HOST_URL: http://127.0.0.1:9000
+        run: bash .github/blue-lock/preflight.sh
+      - name: Scan exact commit and export reports
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_API_TOKEN: ${{ secrets.SONAR_API_TOKEN }}
+          SONAR_HOST_URL: http://127.0.0.1:9000
+          SONAR_PROJECT_KEY: veil
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+        run: bash .github/blue-lock/scan.sh
+      - name: Submit evidence and enforce gate
+        env:
+          BLUE_LOCK_URL: http://127.0.0.1:3000
+          BLUE_LOCK_REPO_ID: ${{ vars.BLUE_LOCK_REPO_ID }}
+          BLUE_LOCK_EMAIL: ${{ secrets.BLUE_LOCK_EMAIL }}
+          BLUE_LOCK_PASSWORD: ${{ secrets.BLUE_LOCK_PASSWORD }}
+        run: |
+          node .github/blue-lock/submit-reports.mjs "$BLUE_LOCK_REPO_ID" "$GITHUB_SHA" "$GITHUB_REF_NAME" \
+            "$RUNNER_TEMP/blue-lock-$GITHUB_RUN_ID/sonar.json" \
+            "$RUNNER_TEMP/blue-lock-$GITHUB_RUN_ID/trufflehog.jsonl" \
+            "$RUNNER_TEMP/blue-lock-$GITHUB_RUN_ID/dependency-check-report.json"
+      - name: Remove private scan files
+        if: always()
+        run: rm -rf -- "$RUNNER_TEMP/blue-lock-$GITHUB_RUN_ID"
