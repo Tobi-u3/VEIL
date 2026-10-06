@@ -8,15 +8,16 @@ umask 077
 : "${SONAR_API_TOKEN:?Set a Sonar user token with Browse permission in SONAR_API_TOKEN}"
 export BL_REPORTS="$RUNNER_TEMP/blue-lock-$GITHUB_RUN_ID"
 rm -rf -- "$BL_REPORTS"
-mkdir -p "$BL_REPORTS/source" "$BL_REPORTS/sonar-work/cache/_tmp"
+mkdir -p "$BL_REPORTS/source" "$BL_REPORTS/sonar-work" "$BL_REPORTS/sonar-cache"
 git archive "$GITHUB_SHA" | tar -x -C "$BL_REPORTS/source"
 # Never persist detected credential values in uploaded GitHub artifacts.
 docker run --rm -v "$PWD:/repo:ro" \
   trufflesecurity/trufflehog:3.97.9 git file:///repo \
   --branch "$GITHUB_SHA" --json --no-verification > "$BL_REPORTS/trufflehog.jsonl"
 docker run --rm --network host --user "$(id -u):$(id -g)" \
-  -e SONAR_TOKEN -e SONAR_HOST_URL -e SONAR_USER_HOME=/work/cache \
+  -e SONAR_TOKEN -e SONAR_HOST_URL -e SONAR_USER_HOME=/sonar-cache \
   -v "$BL_REPORTS/source:/usr/src:ro" -v "$BL_REPORTS/sonar-work:/work" \
+  -v "$BL_REPORTS/sonar-cache:/sonar-cache" \
   sonarsource/sonar-scanner-cli:latest \
   "-Dsonar.projectKey=$SONAR_PROJECT_KEY" -Dsonar.sources=. \
   -Dsonar.working.directory=/work -Dsonar.scm.disabled=true \
