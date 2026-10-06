@@ -40,7 +40,7 @@ jobs:
         run: |
           node .github/blue-lock/submit-reports.mjs "$BLUE_LOCK_REPO_ID" "$GITHUB_SHA" "$GITHUB_REF_NAME" \
             "$RUNNER_TEMP/blue-lock-$GITHUB_RUN_ID/sonar.json" \
-            "$RUNNER_TEMP/blue-lock-$GITHUB_RUN_ID/trufflehog.jsonl" \
+            "$RUNNER_TEMP/blue-lock-$GITHUB_RUN_ID/trufflehog-combined.json" \
             "$RUNNER_TEMP/blue-lock-$GITHUB_RUN_ID/dependency-check-report.json"
       - name: Remove private scan files
         if: always()

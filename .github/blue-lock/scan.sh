@@ -14,6 +14,11 @@ git archive "$GITHUB_SHA" | tar -x -C "$BL_REPORTS/source"
 docker run --rm -v "$PWD:/repo:ro" \
   trufflesecurity/trufflehog:3.97.9 git file:///repo \
   --branch "$GITHUB_SHA" --json --no-verification > "$BL_REPORTS/trufflehog.jsonl"
+# Gitleaks adds independent regex, entropy and custom-rule checks across all Git refs.
+docker run --rm -v "$PWD:/repo:ro" -v "$BL_REPORTS:/report" \
+  zricethezav/gitleaks:latest git --log-opts=--all --report-format json \
+  --report-path /report/gitleaks.json --redact=100 --exit-code 0 /repo
+python3 .github/blue-lock/merge-secrets.py "$BL_REPORTS"
 docker run --rm --network host --user "$(id -u):$(id -g)" \
   -e SONAR_TOKEN -e SONAR_HOST_URL -e SONAR_USER_HOME=/sonar-cache \
   -v "$BL_REPORTS/source:/usr/src:ro" -v "$BL_REPORTS/sonar-work:/work" \
@@ -28,6 +33,9 @@ python3 .github/blue-lock/export-sonar.py
 docker run --rm --user "$(id -u):$(id -g)" -e npm_config_cache=/tmp/npm \
   -v "$BL_REPORTS/source/frontend:/app" -w /app node:24-bookworm-slim \
   npm ci --ignore-scripts --no-audit --no-fund
+docker run --rm --user "$(id -u):$(id -g)" -e HOME=/tmp -e npm_config_cache=/tmp/npm \
+  -v "$BL_REPORTS/source/frontend:/app" -v "$BL_REPORTS:/report" -w /app node:24-bookworm-slim \
+  sh -c 'npm audit --json --audit-level=low > /report/npm-audit.json; rc=$?; [ "$rc" -eq 0 ] || [ "$rc" -eq 1 ]'
 nvd_args=(--nvdDatafeed 'https://dependency-check.github.io/DependencyCheck_Builder/nvd_cache/nvdcve-{0}.json.gz')
 if [[ -n "${NVD_API_KEY:-}" ]]; then nvd_args=(--nvdApiKeyEnvironmentVariable NVD_API_KEY); fi
 docker run --rm -e NVD_API_KEY \
@@ -47,3 +55,4 @@ docker run --rm --user "$(id -u):$(id -g)" \
       [ "$rc" -eq 0 ] || [ "$rc" -eq 1 ]; }
   '
 python3 .github/blue-lock/merge-dependencies.py "$BL_REPORTS"
+
