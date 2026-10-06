@@ -8,7 +8,7 @@ umask 077
 : "${SONAR_API_TOKEN:?Set a Sonar user token with Browse permission in SONAR_API_TOKEN}"
 export BL_REPORTS="$RUNNER_TEMP/blue-lock-$GITHUB_RUN_ID"
 rm -rf -- "$BL_REPORTS"
-mkdir -p "$BL_REPORTS/source" "$BL_REPORTS/sonar-work"
+mkdir -p "$BL_REPORTS/source" "$BL_REPORTS/sonar-work/cache/_tmp"
 git archive "$GITHUB_SHA" | tar -x -C "$BL_REPORTS/source"
 # Never persist detected credential values in uploaded GitHub artifacts.
 docker run --rm -v "$PWD:/repo:ro" \
