@@ -1,91 +1,202 @@
-# GNN extension — original UI
+# VEIL — Passive Threat Detection for Unidirectional IP Traffic
 
-This build adds trained, experimental IP correlation to the selected Detection Fix prototype. See [GNN setup and model limits](docs/GNN.md). The original dashboard layout is retained.
+**Team Blue Lock · Smart India Hackathon · Problem statement SIH26145**
 
-# VEIL — working passive threat-detection prototype
+VEIL is a research prototype that analyses network metadata from a copied, incoming traffic stream and presents suspicious activity with evidence for analyst review. It combines behavioural checks, RandomForest classification, IsolationForest anomaly detection, SHAP explanations, and experimental GNN-based IP correlation.
 
-Team Blue Lock · SIH26145. Start with the replay, then validate the live namespace lab on Kali. This version uses **RandomForest + IsolationForest + SHAP**, FastAPI/WebSockets, React/TypeScript/Tailwind/React Flow, and SQLite (optional PostgreSQL through psycopg). JA4 is optional and must come from the installed Zeek plugin. No SQLAlchemy, KitNET, River, payload storage, active production queries or inline blocking.
+The intended observation point is a mirror or tap before the protected server. The original traffic continues to the server; VEIL processes the copied stream and does not perform inline blocking or query production hosts.
 
-## 1. Install and start
+**Start with the synthetic replay below.** It demonstrates the application without Zeek, administrator privileges, or network traffic generation. Use the isolated Linux lab afterward to evaluate capture and the one-way observation boundary.
 
-Extract into a **new folder** so your previous project remains available:
+> This repository is a working prototype, not a certified production security product. Bundled models use synthetic training data. Alerts and graph patterns are investigation leads, not proof of compromise.
+
+## Contents
+
+- [What an evaluator can inspect](#what-an-evaluator-can-inspect)
+- [Architecture](#architecture)
+- [Requirements](#requirements)
+- [Quick start](#quick-start)
+- [Evaluator walkthrough](#evaluator-walkthrough)
+- [Live passive-capture lab](#live-passive-capture-lab)
+- [Detection and interpretation](#detection-and-interpretation)
+- [Validation and evidence](#validation-and-evidence)
+- [Configuration and data](#configuration-and-data)
+- [Training with reviewed data](#training-with-reviewed-data)
+- [Troubleshooting](#troubleshooting)
+- [Repository guide](#repository-guide)
+- [Scope and limitations](#scope-and-limitations)
+
+## What an evaluator can inspect
+
+| Capability | What to look for |
+| --- | --- |
+| Packet metadata browser | Observed addresses, ports, protocols, and packet records, separate from detections |
+| Detection feed | Behavioural suspicions and persistent anomalies with measured feature values |
+| Explainable classifier output | SHAP contributions explaining the RandomForest vote |
+| Traffic graph | Observed IP relationships and detection-linked nodes |
+| Experimental GNN correlation | Learned scan/SYN-convergence patterns, candidate IPs, and supporting observed features |
+| Replay and live ingestion | Synthetic metadata replay first; Zeek log ingestion for the live lab |
+| Evidence export | Downloadable packet metadata and alert records |
+| Local persistence | SQLite alert and feature-window storage |
+| Analyst access | Locally created account, authenticated API/WebSocket access, and session controls |
+
+JA4 integration and PostgreSQL storage are optional. Base replay and base capture do not require either.
+
+## Architecture
+
+```mermaid
+flowchart TD
+    A["Incoming network traffic"] --> B["Mirror or tap"]
+    B --> C["Protected server"]
+    B -->|"Copied incoming stream"| D["Zeek metadata capture"]
+    D --> E["FastAPI ingestion and feature windows"]
+    R["Synthetic metadata replay"] --> E
+    E --> F["Behaviour checks, RandomForest and IsolationForest"]
+    E --> G["Experimental GNN IP correlation"]
+    F --> H["Alerts, SHAP evidence and SQLite"]
+    H --> I["React analyst console via WebSockets"]
+    G --> I
+    E --> I
+```
+
+The mirror's isolation is a deployment property that must be tested. The included namespace lab uses software mirror/drop rules; it does not certify a hardware data diode.
+
+**Stack:** Python, FastAPI, WebSockets, scikit-learn, SHAP, NumPy/SciPy, SQLite, React, TypeScript, Tailwind CSS, and React Flow. Zeek supplies live metadata. The GNN implementation does not require a GPU or PyTorch.
+
+## Requirements
+
+| Component | Replay evaluation | Live lab |
+| --- | --- | --- |
+| Operating environment | Linux with Bash; Kali is the documented target | Linux host or VM supporting network namespaces and traffic-control rules |
+| Python | 3.12–3.14 with pip and venv; recorded execution validation used 3.12 | Same |
+| Git | Required for the clone instructions | Same |
+| Node.js and npm | Required to build the frontend in a fresh GitHub checkout; Node 22+ recommended | Same initial build |
+| Zeek | Not required | Installed executable available through PATH or `ZEEK_BIN` |
+| Elevated privileges | Not required for the application/replay | Required for namespace setup and capture |
+| Additional utilities | Internet access to install Python/npm dependencies | `iproute2`, `iputils-ping`, `tcpdump`; `tcpreplay` for optional packet replay |
+
+Python 3.14 dependency-wheel resolution was checked in earlier validation; that is not equivalent to runtime validation on every host. The supplied shell scripts use Linux paths and are not native PowerShell instructions.
+
+## Quick start
+
+### 1. Clone and install
+
+Run these commands in a terminal:
 
 ```bash
-unzip ~/Downloads/VEIL_Detection_Fix.zip -d ~/Downloads/VEIL_Updated
-cd ~/Downloads/VEIL_Updated/veil
+git clone https://github.com/Tobi-u3/VEIL.git
+cd VEIL
 bash scripts/install.sh
+```
+
+Run all subsequent commands from this repository root unless a step explicitly changes directory. The installer creates `.venv`, installs Python dependencies, and builds the UI with npm when `frontend/dist/index.html` is missing. **The GitHub checkout does not include that built UI**, so install Node/npm before running the installer.
+
+To select a particular installed Python:
+
+```bash
+PYTHON=python3.12 bash scripts/install.sh
+```
+
+The installer does not replace the operating system's Python.
+
+### 2. Create an analyst account
+
+```bash
 .venv/bin/python scripts/create_user.py
+```
+
+Enter a username and a password containing **15–128 characters**. There is no default login or public registration.
+
+### 3. Start VEIL
+
+For the initial replay evaluation, ensure no live-log configuration is inherited:
+
+```bash
+unset VEIL_LOG
 bash scripts/start.sh
 ```
 
-Open **http://127.0.0.1:8000**. Use the account you just created; its password must contain 15–128 characters. Click **Run demo replay**. Packet metadata, detections, SHAP evidence and the IP graph update through the actual pipeline. The built frontend is included, so Node/npm is only needed if editing/rebuilding the UI.
+Open **[http://127.0.0.1:8000](http://127.0.0.1:8000)** on the same machine and sign in. Keep the terminal running. Stop the application with **Ctrl+C**.
 
-The replay contains synthetic metadata. It sends no packets and does not validate network capture or real-world detection accuracy.
+### 4. Run the demonstration
 
-Python **3.12–3.14** is supported by the selected dependency versions; execution was tested with Python 3.12. Python 3.14 wheel resolution was checked, but execution on your Kali installation still needs verification. The installer uses a compatible installed Python and creates `.venv`; it does not alter your system Python. Select a specific interpreter if necessary:
+Click **Run demo replay**, then follow the walkthrough below.
 
-```bash
-PYTHON=python3.13 bash scripts/install.sh
-```
+The replay feeds synthetic metadata through the application pipeline. It sends no packets and does not validate Zeek capture, mirror isolation, or real-network detection accuracy.
 
-For a UI rebuild, use Node 20.19+ or 22+ and `REBUILD_UI=1 bash scripts/install.sh`.
+## Evaluator walkthrough
 
-## 2. Verify live passive capture on Kali
+| Step | Action | Expected observation |
+| --- | --- | --- |
+| 1 | Sign in and run demo replay | Packet metadata begins appearing as replay events are processed |
+| 2 | Inspect the packet browser | Addresses, protocols, and ports are visible independently of the detection feed |
+| 3 | Open Detections and select a result | Measured evidence and trigger details are available for review |
+| 4 | Inspect classifier evidence | SHAP explains the RandomForest vote; rule/anomaly triggers are shown separately |
+| 5 | Open Traffic graph | Observed connections and detection-linked IPs are visible |
+| 6 | Inspect the GNN IP correlation panel | Candidate IPs and learned patterns can be reviewed with their observed features |
+| 7 | Export alerts and packet metadata | Records can be retained for independent inspection |
+| 8 | Review system status and validation documents | Distinguish application connectivity, ingestion mode, and independently verified capture |
 
-Keep your existing compiled Zeek. Check:
+The demonstration includes a port-scan pattern and multi-source SYN convergence. A GNN group requires multiple qualifying sources; a single-source scan can still produce a node pattern. GNN scores do not create or upgrade alerts.
+
+For a recorded evaluation, retain the repository commit, environment versions, replay/live mode, exported evidence, and actual test output. Do not present synthetic replay as a live attack capture.
+
+## Live passive-capture lab
+
+This optional exercise creates disposable client, attacker, server, and monitor namespaces. Controlled traffic targets the lab server at `10.77.0.20`. It does not attach the lab to `wlan0`.
+
+### 1. Prepare and verify the boundary
+
+Check the existing Zeek installation:
 
 ```bash
 zeek --version
 ```
 
-Install lab prerequisites if missing:
+On Kali/Debian, install missing lab utilities:
 
 ```bash
 sudo apt update
 sudo apt install -y iproute2 iputils-ping tcpdump tcpreplay
 ```
 
-From the project directory:
+Create and verify the lab:
 
 ```bash
 sudo bash scripts/lab-up.sh
 sudo bash scripts/verify-lab.sh
 ```
 
-Both checks must pass: server replies stay out of the observer, and test frames sent by the observer cannot reach the server. The script creates server `.20`, client `.30`, attacker `.10` and a monitor namespace. It does not attach to wlan0. A software namespace/drop-rule test is not certification of a hardware data diode.
+Both isolation checks must pass: server replies stay out of the observer, and test frames injected by the observer cannot reach the server. Save the verification output.
 
-Run these in **four separate terminals**, each starting with:
+### 2. Run the lab in four terminals
 
-```bash
-cd ~/Downloads/VEIL_Updated/veil
-```
+Open each terminal in the cloned **VEIL repository root**. Stop the earlier replay backend before starting Terminal 3.
 
-**Terminal 1 — test server**
+**Terminal 1 — HTTP test server**
 
 ```bash
 mkdir -p data/server-public
 sudo ip netns exec veil-server python3 -m http.server 8000 --bind 10.77.0.20 --directory "$PWD/data/server-public"
 ```
 
-**Terminal 2 — capture the mirrored copy**
+**Terminal 2 — Zeek capture**
 
 ```bash
 sudo env PATH="$PATH" ZEEK_BIN="$(command -v zeek)" bash scripts/capture.sh
 ```
 
-If Zeek is not on PATH, set `ZEEK_BIN` to its actual executable path. This terminal must stay running.
+If Zeek is not on PATH, replace the `ZEEK_BIN` value with its absolute executable path. Leave capture running.
 
-**Terminal 3 — live backend**
-
-Stop the replay backend with Ctrl+C first, then:
+**Terminal 3 — live application**
 
 ```bash
 VEIL_LOG="$PWD/data/live/veil_events.log" bash scripts/start.sh
 ```
 
-Sign in again. The system page should show live mode; packet counts should move when Terminal 4 generates traffic. A WebSocket connection alone does not prove capture. An idle server legitimately produces no new packets.
+Sign in again at [http://127.0.0.1:8000](http://127.0.0.1:8000). Verify live mode. Replay is disabled while a live log is configured.
 
-**Terminal 4 — normal traffic, then controlled test patterns**
+**Terminal 4 — normal traffic, then bounded test patterns**
 
 ```bash
 sudo ip netns exec veil-client "$PWD/.venv/bin/python" scripts/lab-traffic.py normal
@@ -95,63 +206,34 @@ sudo ip netns exec veil-attacker "$PWD/.venv/bin/python" scripts/lab-traffic.py 
 sudo ip netns exec veil-attacker "$PWD/.venv/bin/python" scripts/lab-traffic.py beacon
 ```
 
-These finite test patterns target only the disposable lab server. Inspect Detections, evidence, the graph and alert export. Beacon detection needs several separate connections and takes about 27 seconds. SYN-rate results depend on actual generator throughput; record observed rates rather than assuming an alert.
+Check that the metadata log grows and packet counters move while traffic runs. A connected WebSocket only confirms UI transport. Beaconing needs several separate connections and approximately 30 seconds; SYN-rate results depend on the observed generator throughput. Inspect actual evidence rather than assuming every pattern produces an alert.
 
-After stopping the server, capture and backend:
+### 3. Stop and clean up
+
+Stop the server, capture process, and backend with Ctrl+C, then run:
 
 ```bash
 sudo bash scripts/lab-down.sh
 ```
 
-## 3. Detection and evidence
+For optional JA4/TLS tests, offline PCAP processing, isolated `tcpreplay`, and capture measurements, see [the demonstration guide](docs/DEMO.md). Where older guides refer to an extracted ZIP directory, use this cloned repository root.
 
-Twelve metadata features are analysed by RandomForest and IsolationForest for each completed two-second source/destination window. The `unique_ports` feature now counts **TCP SYN-without-ACK destination ports over a rolling ten-second window**, so normal ACK/data packets and SYN-ACK replies to client ports cannot inflate the scan signal. TCP port-scan suspicion requires at least sixteen distinct probed ports. A normal ping to one destination is captured and analysed, but is not a port scan.
+## Detection and interpretation
 
-A SYN-rate alert requires high rate **and** a predominantly SYN-probe pattern. Ordinary download rate and packet size alone no longer create a named DDoS/large-transfer alert. Aggregate DDoS suspicion likewise requires predominantly SYN probes, rather than simply several busy source addresses. This narrower signature reduces false positives; it does not provide comprehensive UDP/ICMP/HTTP flood detection.
+- **Feature extraction:** twelve metadata features are analysed in completed two-second source/destination windows.
+- **TCP scan suspicion:** at least sixteen distinct destination ports from TCP SYN-without-ACK probes within a rolling ten-second window. ACK/data packets and SYN-ACK replies do not inflate this count. Normal ping to one destination is not a TCP port scan.
+- **SYN-rate/convergence suspicion:** high rate must be supported by a predominantly SYN-probe pattern. Ordinary high-volume downloads are not sufficient. This is not comprehensive UDP, ICMP, or HTTP flood detection.
+- **RandomForest:** provides supporting classifier votes. An unsupported vote alone does not create a named attack alert.
+- **IsolationForest:** unknown anomalies require three consecutive populated outlier windows, with at least four packets per window and gaps no greater than five seconds. This reduces isolated alerts but can miss short bursts.
+- **SHAP:** explains RandomForest output only. It does not explain the GNN or prove an attack occurred.
+- **GNN correlation:** a trained directed GraphSAGE variant examines a rolling 30-second graph. Scores are uncalibrated pattern votes; shared destinations and embedding similarity do not prove coordination or malicious ownership.
+- **JA4:** optional fingerprint evidence supplied by the installed Zeek plugin. The default watchlist is empty, and encrypted content is not decrypted.
 
-RandomForest votes support and explain behavioural suspicions. An unsupported classifier vote alone does not create a named attack alert. IsolationForest can raise an unknown anomaly after three consecutive populated outlier windows (at least four packets per window; gaps no greater than five seconds). This persistence requirement reduces isolated false alerts but delays anomaly alerts and may miss short bursts. DNS, periodic connections and JA4 matches remain suspicious evidence requiring review.
+Read [GNN design and limits](docs/GNN.md) and [the model card](docs/MODEL_CARD.md) before interpreting model scores.
 
-SHAP explains the RandomForest vote; the UI separates rule/anomaly triggers from classifier evidence. Scores are not calibrated attack probabilities. Both bundled models use **synthetic training data**, with normal high-throughput transfers and ping-like traffic included in the demonstration baseline. Test scenario success does not establish real-network accuracy.
+## Validation and evidence
 
-Export captured live feature windows from the SQLite store for review:
-
-```bash
-.venv/bin/python scripts/export_features.py --output unreviewed_live_features.csv
-```
-
-Add independently verified `label` values to reviewed feature CSVs. Use separate, later validation windows rather than the same captured sessions. The current schema is `veil-v2-tcp-probe-ports`; export new windows after this update. Legacy models/baselines with different port semantics must be retrained.
-
-Train RandomForest from the reviewed data:
-
-```bash
-.venv/bin/python scripts/train.py --train-csv reviewed_training.csv --validation-csv reviewed_validation.csv
-```
-
-Both files need all feature columns and `label`; at least 100 training and 20 validation rows are required, with benign and at least one attack class in training. These are input minimums, not sufficient evidence of model quality. Accepted labels: `benign`, `ddos`, `scan`, `dns_anomaly`, `beaconing`, `encrypted_suspicion`, `large_transfer`. Timestamp columns, when present, must establish later validation data. High transfers should be labelled by independently known context, not automatically treated as attacks. The reported metrics apply only to your supplied validation set.
-
-Replace only the anomaly baseline using at least 1,200 reviewed benign feature windows:
-
-```bash
-.venv/bin/python scripts/train_isolation.py --benign-csv /absolute/path/reviewed_benign.csv
-```
-
-Restart the backend afterward. CSV columns must match `backend/features.py::FEATURES`. Do not treat generated labels or the detector's own predictions as ground truth. `scripts/train.py` without CSV arguments regenerates the synthetic demonstration classifier. Restart VEIL after any model replacement.
-
-## 4. Persistence and limits
-
-Alerts and feature windows are persisted locally in `data/veil.sqlite`; the latest 100 alerts return to the dashboard after restart. The database retains at most 10,000 rows per table when periodic cleanup runs. Packet browsing retains the latest 10,000 metadata records in memory; these packet counts and model windows reset on restart. Login sessions reset too.
-
-The live follower tolerates partial lines, malformed records, log truncation and rotation. It reads an existing log from the beginning after restart; this prototype does **not** implement exactly-once ingestion, so restarting against an old log may reproduce alerts. For a clean demonstration, stop Zeek/backend, move old capture logs aside, then start capture and the backend with a fresh log. Preserve logs required as evidence.
-
-No outgoing production traffic is observed in this lab's strict incoming-only scope. Exfiltration, reverse traffic ratios and attack success cannot be confirmed. The graph shows observed IP relationships, alert links, and experimental trained GNN correlation. None of these proves that an address is malicious. Network mirroring and monitor isolation require verification at deployment.
-
-## 5. JA4, optional PostgreSQL and packet replay
-
-See `docs/DEMO.md` for the retained Zeek JA4/TLS test and isolated tcpreplay instructions. Base capture works without JA4. The default watchlist is empty. TLS/QUIC fingerprint integration depends on the installed FoxIO plugin and has not been rerun in this build environment.
-
-SQLite requires no database service. To use an existing PostgreSQL instance, supply `DATABASE_URL` as in `compose.yml` and pass it together with `VEIL_LOG` for live operation. A PostgreSQL connection failure stops startup. PostgreSQL was not exercised in this validation run.
-
-## 6. Check your installation
+Run locally after installation and account creation:
 
 ```bash
 .venv/bin/python scripts/doctor.py --require-account
@@ -159,45 +241,106 @@ SQLite requires no database service. To use an existing PostgreSQL instance, sup
 .venv/bin/python scripts/benchmark.py
 ```
 
-The package includes the current 40-test log in `docs/test-results.txt`, build verification in `docs/VALIDATION.md`, and a measured metadata benchmark in `docs/benchmark.json`. This is not a packet-capture throughput benchmark. See `docs/SECURITY.md` before any remote analyst access; startup binds only to loopback.
+| Evidence | What it supports |
+| --- | --- |
+| [Recorded validation](docs/VALIDATION.md) and [test log](docs/test-results.txt) | Earlier detection-update checks, including 40 recorded passing tests; not a claim that the current checkout was just retested |
+| [GNN validation](docs/gnn-validation.json) and [GNN test log](docs/gnn-test-results.txt) | Separate recorded evidence for the graph extension |
+| [Startup smoke check](docs/startup-smoke.json) | Recorded application startup, authentication, and replay checks |
+| [Metadata benchmark](docs/benchmark.json) | Recorded processing measurement; rerun on the evaluation host |
+| [GNN model report](models/gnn-report.json) | Synthetic graph evaluation and model configuration |
 
-If installation fails, share the final error output and `python3 --version`. Do not reinstall or replace Kali's system Python to troubleshoot this project.
+The recorded metadata benchmark processed 7,538 events in 17.653 seconds, approximately **427 events/second**. It did not meet the retained 1,000 events/second target. This is not wire-speed capture throughput, end-to-end alert latency, or real-network accuracy.
 
-## 7. RHEL VirtualBox test: ping versus port scan
+Live Zeek capture, JA4 integration, mirror enforcement, and packet loss need separate host-level verification. Existing reports describe their original validation runs; the commands above produce evidence for the evaluator's own checkout.
 
-Your RHEL VM sending `ping` to the Kali destination should create ICMP packet records and **no port-scan alert**. Ping checks reachability; it does not probe TCP ports. To test a port scan, leave Zeek and the live backend running, and run this from your own RHEL VM:
+## Configuration and data
+
+| Setting or location | Purpose |
+| --- | --- |
+| `VEIL_LOG=/absolute/path/to/veil_events.log` | Select live log ingestion; disables replay |
+| `VEIL_GNN=0` | Disable experimental GNN collection/inference |
+| `VEIL_JA4=1` | Enable optional JA4 policy when running the capture script |
+| `ZEEK_BIN=/absolute/path/to/zeek` | Select the installed Zeek executable |
+| `DATABASE_URL` | Optional PostgreSQL connection; see [configuration example](compose.yml) |
+| `data/veil.sqlite` | Default local alert and feature-window database |
+| `data/ja4-watchlist.json` | Optional fingerprint watchlist |
+| `models/` | Model artifacts and reports |
+
+SQLite needs no separate database service. A configured PostgreSQL connection failure stops startup; the recorded validation did not exercise PostgreSQL.
+
+Alerts and feature windows persist in SQLite. The dashboard restores the latest 100 alerts; periodic cleanup limits each database table to 10,000 rows. Packet browsing retains up to 10,000 metadata records in memory. Packet counters, active windows, GNN state, and login sessions reset on restart.
+
+The live follower handles partial/malformed lines and log rotation/truncation, but rereads an existing log from its beginning after restart. This can reproduce alerts; exactly-once ingestion is not implemented. A new capture folder does **not** clear historical alerts in the existing database. For independent evaluations, use a separate clone/data directory and retain earlier evidence.
+
+The application binds to loopback by default. Read [security guidance](docs/SECURITY.md) before configuring remote analyst access.
+
+## Training with reviewed data
+
+Export captured feature windows:
 
 ```bash
-VEIL_IP=YOUR_KALI_WIFI_IPV4_ADDRESS
-sudo nmap -sS -Pn -n -p 8100-8147 --min-rate 20 --max-rate 30 --max-retries 0 "$VEIL_IP"
+.venv/bin/python scripts/export_features.py --output unreviewed_live_features.csv
 ```
 
-Replace the placeholder with the current destination IP. This finite test probes 48 TCP ports on your own lab host. Check that VEIL captures packets with `proto: tcp`, `syn: true` and different `dport` values. When at least 16 distinct ports are seen in ten seconds, a scan suspicion should appear after the feature window completes. If the probes are not seen, detection cannot infer the missing packets. Send an alert export plus a short metadata sample for diagnosis; a ping alone does not validate attack detection.
-
-The backend retains historical alerts if you reuse an existing database. Use a fresh extraction directory/database to distinguish this version's output from old false alerts. Keep earlier captures if needed as evidence.
-
-## 8. Continue real wlan0 capture
-
-The following captures incoming IPv4 packets addressed to this Kali laptop; it is not a receive-only mirror/diode boundary. It does not capture arbitrary traffic elsewhere on Wi-Fi. Use a separate, isolated mirror interface for the final deployment.
-
-Terminal 1:
+Assign independently verified labels, then use separate training and later validation sessions:
 
 ```bash
-cd ~/Downloads/VEIL_Updated/veil
-PROJECT_ROOT="$PWD"
-ZEEK_BIN="$(command -v zeek)"
-LOCAL_IP=$(ip -4 -o addr show wlan0 scope global | awk '{split($4,a,"/");print a[1];exit}')
-echo "$LOCAL_IP"
-mkdir -p data/wifi-live
-cd data/wifi-live
-sudo "$ZEEK_BIN" -C -i wlan0 -f "ip and dst host $LOCAL_IP" "$PROJECT_ROOT/zeek/veil.zeek"
+.venv/bin/python scripts/train.py --train-csv reviewed_training.csv --validation-csv reviewed_validation.csv
 ```
 
-Continue only if LOCAL_IP printed the expected current destination address. Keep capture running, then in Terminal 2:
+Both CSVs require all feature columns from `backend/features.py::FEATURES` and a `label` column. Minimum inputs are 100 training rows and 20 validation rows, with benign and at least one attack class in training. These are input checks, not sufficient sample sizes for operational claims.
+
+Accepted labels: `benign`, `ddos`, `scan`, `dns_anomaly`, `beaconing`, `encrypted_suspicion`, and `large_transfer`. Label transfers by independently established context; high volume alone does not establish an attack. Use the current `veil-v2-tcp-probe-ports` feature schema.
+
+Replace the anomaly baseline with at least 1,200 reviewed benign feature windows:
 
 ```bash
-cd ~/Downloads/VEIL_Updated/veil
-VEIL_LOG="$PWD/data/wifi-live/veil_events.log" bash scripts/start.sh
+.venv/bin/python scripts/train_isolation.py --benign-csv /absolute/path/reviewed_benign.csv
 ```
 
-Keep only one backend on port 8000; stop the earlier version before starting this one. New captures use the new folder, so previous alerts are not mixed into this verification.
+Restart after replacing models. Running `scripts/train.py` without CSV arguments regenerates the synthetic demonstration classifier. Never use VEIL's own predictions as ground truth. For separately labelled graph datasets and split requirements, see [GNN retraining](docs/GNN.md#retraining).
+
+## Troubleshooting
+
+| Symptom | Check or action |
+| --- | --- |
+| Installer cannot find a supported Python | Install Python 3.12–3.14 with venv support and select it with `PYTHON=...`; do not replace system Python |
+| Installer asks for npm, or the browser shows a build message | Install Node/npm, then run `REBUILD_UI=1 bash scripts/install.sh` |
+| Login is unavailable | Run `.venv/bin/python scripts/create_user.py`, then restart; there are no default credentials |
+| Port 8000 is already in use | Stop the earlier VEIL backend before starting another |
+| Replay is disabled | Stop the backend, run `unset VEIL_LOG`, and restart for replay mode |
+| Live mode shows no new records | Check traffic generation, the absolute log path, Zeek output, and mirror counters |
+| Zeek is missing under sudo | Supply its absolute path through `ZEEK_BIN` |
+| Namespace setup reports insufficient permissions | Use a Linux host/VM with namespace privileges; use metadata replay if the environment cannot support the lab |
+| Ping is captured but no scan alert appears | Expected: ping is ICMP, not a multi-port TCP SYN scan |
+| GNN is unavailable or reaches capacity | Inspect its status and model artifact; normal detection continues; see [GNN limits](docs/GNN.md#timing-and-limits) |
+| Old alerts remain after changing capture logs | Alerts persist in SQLite independently of the capture-log directory |
+| Alerts reappear after restart | Existing live logs are reread; preserve evidence and use a fresh log for a clean run |
+
+When reporting a problem, include the commit, OS/Python versions, replay or live mode, failing command, and final error output. Exclude credentials and sensitive captured addresses.
+
+## Repository guide
+
+| Path | Purpose |
+| --- | --- |
+| [backend/](backend/) | API, authentication, ingestion, feature extraction, detection, correlation, and storage |
+| [frontend/](frontend/) | React/TypeScript analyst console |
+| [zeek/](zeek/) | Metadata capture policy and optional JA4 adapter |
+| [scripts/](scripts/) | Installation, account creation, startup, lab, training, and validation commands |
+| [models/](models/) | Bundled model artifacts and training reports |
+| [tests/](tests/) | Automated application and model tests |
+| [docs/](docs/) | Architecture, demonstrations, model limits, security, and recorded evidence |
+| [data/](data/) | Demo inputs and local runtime data |
+
+Additional references: [architecture](docs/ARCHITECTURE.md), [third-party components](docs/THIRD_PARTY.md), [security](docs/SECURITY.md), and [model card](docs/MODEL_CARD.md).
+
+## Scope and limitations
+
+- Incoming-only observation cannot confirm server responses, attack success, full exfiltration, or reverse traffic ratios.
+- Capturing packets addressed to a laptop's Wi-Fi interface is not equivalent to an isolated pre-server mirror and does not expose arbitrary traffic elsewhere on the network.
+- Synthetic training and test results do not establish real-network precision, recall, false-positive rate, or operational readiness.
+- GNN correlation is experimental, ephemeral, and capacity-limited; it does not alter the existing alert decisions.
+- JA4/TLS and QUIC depend on compatible installed components and separate verification.
+- Network isolation, capture loss, real-world model evaluation, and deployment security must be validated in the target environment.
+
+Use VEIL to evaluate passive metadata analysis, reviewable detection evidence, and graph-based investigation through reproducible replay and controlled lab exercises.
